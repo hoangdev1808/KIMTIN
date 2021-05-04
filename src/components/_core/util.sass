@@ -1,0 +1,283 @@
+#overlay
+	opacity: 0
+	visibility: hidden
+	pointer-events: none
+
+	background-color: rgba(0, 0, 0, .8)
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 999
+	transition: .3s all ease-in-out
+
+	&.active
+		opacity: 1
+		visibility: visible
+		pointer-events: visible
+.overflow
+	overflow: hidden
+.container--tabs
+	.nav-tabs
+		display: flex
+		list-style: none
+		align-items: center
+		> li
+			display: flex
+			align-items: center
+			&.active
+				> a
+					color: $main
+					cursor: default
+	.tab-panel
+		display: none
+		&.active
+			display: block
+
+.lcl
+	overflow: hidden
+	display: -webkit-box
+	text-overflow: ellipsis
+	-webkit-box-orient: vertical
+
+	&-1
+		-webkit-line-clamp: 1
+
+	&-2
+		-webkit-line-clamp: 2
+
+	&-3
+		-webkit-line-clamp: 3
+
+	&-4
+		-webkit-line-clamp: 4
+.swiper-button-next,
+.swiper-button-prev
+	&::before
+		font-family: Linearicons-Free
+		font-size: 36px
+		color: $white
+
+	&:focus
+		outline: none
+	&::after
+		display: none !important
+.swiper-button-next
+	&::before
+		content: '\e876'
+.swiper-button-prev
+	&::before
+		content: '\e875'
+.turn-back
+	position: absolute
+	top: 0
+	right: 0
+	width: 30px
+	height: 30px
+	background: $main
+	z-index: 99
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	em
+		color: $white
+		font-size: 18/16*1rem
+
+	@media screen and ( min-width: 992px )
+		display: none
+.tab-panels
+	.tab-content
+		display: none
+		&.active
+			display: block
+
+.option
+	width: 46px
+	height: 38px
+	position: absolute
+	&.black
+		right: 10px
+		top: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		background: url(../img/icons/bg-black.png)
+	&.red
+		left: 10px
+		top: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		background: url(../img/icons/bg-red.png)
+		background-size: 100% 100%
+		background-position: center
+	.inner
+		font-size: 12px
+		text-transform: uppercase
+		color: $white
+		font-weight: bold
+.cmsadminpanel
+	nav
+		.listmenu
+			li
+				.form-inline
+					display: flex
+					.form-group
+						display: flex
+						align-items: center
+						.sr-only
+							color: $white
+							position: static
+							width: auto
+							height: auto
+							padding: 0 10px
+.commentpanel
+	display: none !important
+.new-list-page,
+.product-detail-page
+	#pagebanner
+		display: none
+.news-detail-page
+	.zone-list
+		display: none
+.wrap-form-promotion
+	margin-top: 10px
+	.wrap-form
+		width: 100%
+		position: relative
+		.form-group
+			position: relative
+			input
+				width: 100%
+				height: 40px
+				border-radius: 5px 0 0 5px
+				border: solid 1px #cccccc
+				border-right: none
+			span
+				position: absolute
+				top: 100%
+				left: 0
+				width: 100%
+			&.frm-btnwrap
+				position: absolute
+				top: 0
+				right: 0
+				border: none
+				width: 150px
+				.frm-btn
+					width: 100%
+					height: 40px
+					border-radius: 0
+					background: $main
+					box-shadow: unset
+					input
+						width: 100%
+						border-radius: 0
+						border: none
+					&::after
+						content: 'ĐĂNG KÝ'
+						color: $white
+						padding-left: 0
+					&::before
+						display: none
+.product-item
+	position: relative
+	margin-bottom: 30px
+	.pro-img
+		width: 134px
+		margin: 0 auto
+		a
+			+img-scale(2)
+	ul
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 30px
+		li
+			width: 40px
+			height: 40px
+			display: flex
+			align-items: center
+			justify-content: center
+			background: #f8f8f8
+			border: solid 1px #eaeaea
+			a
+				width: 100%
+				display: inline-block
+				+img-scale(.6)
+			+ li
+				margin-left: 10px
+			&.active
+				border: solid 1px $main
+	.pro-infor
+		padding: 0 10px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		.pro-title
+			display: flex
+			justify-content: center
+			padding-bottom: 8px
+		.pro-price
+			justify-content: space-between
+			.price
+				.priceold
+					color: $gray
+					text-decoration: line-through
+				.pricesale
+					font-size: r(18px)
+					font-weight: 700
+					letter-spacing: 0.05px
+	@media screen and ( min-width: 1025px )
+		&:hover
+			.pro-img
+				a
+					img
+						transform: scale(.95)
+	@media screen and ( max-width: 1199.98px )
+		.pro-img
+			width: 115px
+		.pro-infor
+			.pro-title
+				font-size: r(14px)
+			.pro-price
+				.price
+					.priceold
+						font-size: r(13px)
+					.pricesale
+						font-size: r(14px)
+				.order
+					.btn-order
+						padding: 5px
+.productpage
+	#zone-nav
+		display: none
+.zone-list
+	width: 100%
+	padding: 6px 0
+	margin-bottom: 8px
+	border-bottom: solid 1px #555555
+	ul
+		display: flex
+		align-items: center
+		justify-content: center
+		li
+			a
+				font-size: 18/16*1rem
+				color: $gray-2
+			+ li
+				margin-left: 53px
+			&.active
+				position: relative
+				a
+					font-weight: 700
+				&::after
+					position: absolute
+					bottom: -8px
+					left: 0
+					width: 100%
+					height: 3px
+					background: $black
+					content: ''
