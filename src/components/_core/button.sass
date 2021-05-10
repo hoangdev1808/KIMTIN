@@ -5,12 +5,14 @@
 	white-space: nowrap
 	vertical-align: middle
 	user-select: none
+	background: $tran
 	&-toggle
 		cursor: pointer
 		position: relative
 		padding: 0
 		min-width: 30px
 		min-height: 23px
+		margin-left: 30px
 		transition: .3s all linear
 		span
 			display: block
@@ -53,125 +55,64 @@
 					top: 18px
 					width: 0%
 					left: 50%
-		@media screen and ( min-width: 768px )
+		@media screen and ( min-width: 1025px )
 			display: none
 		@media(max-width: 576px)
 			+ span
 				display: none
-	&-view-more
-		width: 280px
-		height: 50px
-		border: solid 1px $white
-		text-transform: uppercase
-		font-size: 1rem
-		color: $white
-		letter-spacing: 1px
-		align-items: center
-		display: flex
-		justify-content: center
-		transition: all .5s
-		@media screen and ( min-width: 1025px )
-			&:hover
-				background: $main
-	&-view-all
-		width: 280px
-		height: 50px
-		border: solid 1px #444444
-		text-transform: uppercase
-		font-size: 1rem
-		color: #444444
-		letter-spacing: 1px
-		align-items: center
-		display: flex
-		justify-content: center
-		transition: all .5s
-		@media screen and ( min-width: 1025px )
-			&:hover
-				background: $main
-				color: $white
-				border: solid 1px transparent
-	&-order
-		border-radius: 5px
-		border: solid 1px $text
-		padding: 5px 16px
-		transition: all .5s
-		@media screen and ( min-width: 992px )
-			&:hover
-				border: solid 1px transparent
-				background: $main
-				color: $white
-	&-search-2
-		width: 100%
-		height: 40px
-		border: solid 1px $main
-		color: $main
-		border-radius: 5px
+	&-defaul
+		position: relative
 		display: flex
 		align-items: center
 		justify-content: center
-		transition: .3s all ease-in-out
-		&:hover
-			border: solid 1px transparent
-			color: $white
-			background: $main
-	&-continue,
-	&-booling
-		width: 240px
-		height: 40px
-		border-radius: 5px
+
+	&-black,
+	&-yellow
+		position: relative
 		display: flex
 		align-items: center
 		justify-content: center
-		font-size: 1rem
-		text-transform: uppercase
-		letter-spacing: 0.1px
-	&-continue
-		background: #f3f3f3
-		color: #444444
-	&-booling
-		background: $red
-		color: $white
-		margin-left: 28px
-.btn-dropdown
-	font-size: r(24px)
-	cursor: pointer
-	display: flex
-	align-items: cente
-	justify-content: center
-	em
-		transition: all .5s
-	&.active
-		em
-			transform: rotate(180deg)
-	@media screen and ( min-width: 992px )
-		display: none
-.button-gray
-	.swiper-button-next,
-	.swiper-button-prev
+		border: 1px solid $tran
+		transition: 0.3s ease-out
+		span
+			position: relative
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.7px
+			transition: 0.3s ease-out
+			z-index: 10
+			padding: 10px 18px
+			font-size: r(14px)
 		&::before
-			color: $gray
-		&:hover
-			&::before
-				color: $main
-				transition: .3s all ease-in-out
-	.swiper-button-next
-		right: -60px
-		@media screen and ( max-width: 1519.9px )
-			right: -45px
-	.swiper-button-prev
-		left: -60px
-		@media screen and ( max-width: 1519.9px )
-			left: -45px
-	@media screen and ( max-width: 1365.9px )
-		.wrap-button
-			display: flex
-			justify-content: center
-			margin: 30px 0
-		.swiper-button-next,
-		.swiper-button-prev
-			position: static
-			font-size: r(24px)
-		.swiper-button-next
-			transform: translateX(100%)
-		.swiper-button-prev
-			transform: translateX(-130%)
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			width: 100%
+			content: ''
+			transition: 0.3s ease-out
+	&-black
+		span
+			color: $main
+
+		&::before
+			background: $black
+		@media screen and ( min-width: 991.98px )
+			&:hover
+				border: 1px solid $main
+				&::before
+					width: 0
+				span
+					color: $black
+	&-yellow
+		span
+			color: $black
+		&::before
+			background: $main
+		@media screen and ( min-width: 991.98px )
+			&:hover
+				border: 1px solid $black
+				&::before
+					width: 0
+				span
+					color: $main

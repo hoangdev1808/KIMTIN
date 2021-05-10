@@ -27,7 +27,7 @@
 =bg-body($color)
 	#{if(&, '&.bg-body','.bg-body')}
 		background-color: $color
-	// ex: +bg-body($body)
+	// ex: +bg-body($white)
 	// pug: header.bg-body or .bg-body
 	// ->
 	// css: header.bg-body{background-color: #ffffff}
@@ -127,7 +127,7 @@
 	&::-webkit-scrollbar
 		width: 5px
 	&::-webkit-scrollbar-track
-		background: $body
+		background: $white
 	&::-webkit-scrollbar-thumb
 		background: $main
 	&::-webkit-scrollbar-thumb:hover
@@ -135,4 +135,4 @@
 =text-gray
 	font-size: r(16px)
 	font-weight: 400
-	color: $gray
+	color: $gray-6

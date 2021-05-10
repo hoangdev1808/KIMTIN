@@ -1,31 +1,67 @@
 header
 	nav
-		.container
-			.nav-wrapper.d-flex
-				.navbrand
-					a(href="") Hoang.Buzz
-				ul.navbar.d-flex.ml-auto
-					li.nav-item.active
-						a.nav-link.f-14.fw-500.color-white(href='#home') Trang chủ
-					li.nav-item
-						a.nav-link.f-14.fw-500.color-white(href='#about') Giới thiệu
-					li.nav-item
-						a.nav-link.f-14.fw-500.color-white(href='#about') Dịch vụ
-					li.nav-item
-						a.nav-link.f-14.fw-500.color-white(href='#project') Dự án
-					li.nav-item
-						a.nav-link.f-14.fw-500.color-white(href='#project') Blog
-					li.nav-item
-						a.nav-link.f-14.fw-500.color-white(href='#contact') Liên hệ
-				form.search-box(action="") 
-					.button-search
-						em.ri-search-line
-					.form-group 
-						input(type="text" placeholder="Tìm kiếm")
-						button 
+		.header-top 
+			.container 
+				.nav-main.d-flex.align-center
+					ul.navbar.d-flex.align-center
+						li.nav-item 
+							a.nav-link(href="") vật liệu hàn
+						li.nav-item 
+							a.nav-link(href="") dụng cụ hàn
+						li.nav-item 
+							a.nav-link(href="") dụng cụ cầm tay
+						li.nav-item 
+							a.nav-link(href="") ván sàn
+						li.nav-item 
+							a.nav-link(href="") sản phẩm khác
+					.wrap-right.d-flex.align-center 
+						.hotline.d-flex.align-center
+							em.ri-phone-line 
+							span +84 938 55 8748
+						.promotion 
+							a(href="") Khuyến mãi
+						.wrap-end.d-flex.align-center
+							.language
+								.dropdown
+									a(href="javascript:;") VN 
+										em.ri-arrow-down-s-line
+									ul.dropdown-menu
+										li 
+											a(href="") EN 
+										li 
+											a(href="") VN
+						.toggle-button 
+							.icon
+								em.ri-arrow-down-s-line
+							.sub-toggle 
+					.btn.btn-toggle
+						span 
+						span 
+						span
+						span
+		.header-bottom 
+			.container.d-flex.align-center 
+				.logo-box 
+					a(href="") 
+						img(src="./img/logo.png", alt="")
+				.search-wrapper 
+					.form-group
+						input(type="text" placeholder="Tìm kiếm...")
+						button.btn.btn-search
 							em.ri-search-line
-				.btn.btn-toggle
-					span 
-					span 
-					span
-					span
+				.account-wrapper 
+					a(href="") 
+						em.ri-pencil-line
+						|Đăng ký
+					a(href="") 
+						em.ri-user-line
+						|Đăng nhập
+				.shopping-card-toggle.d-flex.align-center
+					.icon
+						em.ri-shopping-cart-2-line
+					span.quilt 05
+				.wrapper-button 
+					a.btn.btn-black(href="") 
+						span khách hàng đại ký
+					a.btn.btn-yellow(href="")
+						span chào giá cạnh tranh

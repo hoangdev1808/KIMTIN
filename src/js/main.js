@@ -24,13 +24,13 @@ const mainMenu = () => {
 		let $this = $(".btn-toggle");
 		$this.toggleClass("active");
 		$("#overlay").toggleClass("active");
-		$(".nav-wrapper .navbar").toggleClass("active");
+		$(".nav-main .navbar").toggleClass("active");
 	});
 	$("#overlay").on("click", function () {
 		let $this = $(this);
 		$this.removeClass("active");
 		$(".btn-toggle").removeClass("active");
-		$(".nav-wrapper .navbar").removeClass("active");
+		$(".nav-main .navbar").removeClass("active");
 	});
 	$(".btn-toggle-search").on("click", function () {
 		$(this).siblings(".search-box").slideToggle();
@@ -71,6 +71,38 @@ const setBackgroundElement = () => {
 		});
 	});
 };
+
+// ======================== MAPPING ============================================//
+const mappingInit = () => {
+	$(".wrap-right .hotline").mapping({
+		mobileWrapper: ".wrap-right .toggle-button .sub-toggle",
+		mobileMethod: "appendTo",
+		desktopWrapper: "header nav .header-top .nav-main .wrap-right",
+		desktopMethod: "appento",
+		breakpoint: 1200,
+	});
+	$(".wrap-right .promotion").mapping({
+		mobileWrapper: ".wrap-right .toggle-button .sub-toggle",
+		mobileMethod: "appendTo",
+		desktopWrapper: ".wrap-right",
+		desktopMethod: "appento",
+		breakpoint: 1200,
+	});
+	$(".header-bottom .wrapper-button").mapping({
+		mobileWrapper: ".wrap-right .toggle-button .sub-toggle",
+		mobileMethod: "appendTo",
+		desktopWrapper: ".header-bottom",
+		desktopMethod: "appento",
+		breakpoint: 1200,
+	});
+
+	$("header")
+		.find(".toggle-button .icon")
+		.on("click", function () {
+			$(this).next().slideToggle();
+			$(this).toggleClass("active");
+		});
+};
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	scrollTop();
@@ -79,4 +111,5 @@ $(document).ready(function () {
 	searchButton();
 	setBackgroundElement();
 	// checkLayoutBanner();
+	mappingInit();
 });
