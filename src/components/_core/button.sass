@@ -72,7 +72,6 @@
 		display: flex
 		align-items: center
 		justify-content: center
-		border: 1px solid $tran
 		transition: 0.3s ease-out
 		span
 			position: relative
@@ -92,6 +91,7 @@
 			content: ''
 			transition: 0.3s ease-out
 	&-black
+		background: $main
 		span
 			color: $main
 
@@ -99,19 +99,18 @@
 			background: $black
 		@media screen and ( min-width: 991.98px )
 			&:hover
-				border: 1px solid $main
 				&::before
 					width: 0
 				span
 					color: $black
 	&-yellow
+		background: $brow-f20
 		span
 			color: $black
 		&::before
 			background: $main
 		@media screen and ( min-width: 991.98px )
 			&:hover
-				border: 1px solid $black
 				&::before
 					width: 0
 				span

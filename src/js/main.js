@@ -38,7 +38,26 @@ const mainMenu = () => {
 };
 
 /*==========LISTBANNER SLIDER==========*/
-const initBanner = () => {};
+const initBanner = () => {
+	let myswiper = new Swiper(".banner-hero  .swiper-container", {
+		loop: false,
+		speed: 2500,
+		effect: "fade",
+		grabCursor: true,
+		// autoplay: {
+		// 	delay: 5000,
+		// 	disableOnInteraction: false,
+		// },
+		fadeEffect: {
+			crossFade: true,
+		},
+		pagination: {
+			el: ".banner-hero  .swiper-pagination",
+			clickable: true,
+			type: "bullets",
+		},
+	});
+};
 // ===========================CHECK BANNER========================= //
 const checkLayoutBanner = () => {
 	const pagesBanner = $("#pagebanner");

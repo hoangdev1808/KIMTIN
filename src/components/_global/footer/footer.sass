@@ -58,6 +58,15 @@ footer
 			.wrap-right
 				margin-left: 0
 				margin-top: 20px
+		@media screen and ( max-width: 767.98px )
+			.subscribefrm
+				flex-direction: column
+				width: 100%
+				.caption
+					padding-bottom: 20px
+				.form-group
+					width: 100%
+					margin-left: 0
 	.footer-center,
 	.footer-bottom
 		.footer-card
@@ -85,10 +94,16 @@ footer
 								em
 									color: $brow-f20
 									font-size: 30px
+							@media screen and ( max-width: 991.98px )
+								a
+									em
+										font-size: 1rem
 							+ li
 								margin-left: 18px
 				.logo-ct
 					padding-top: 20px
+					@media screen and ( max-width: 991.98px )
+						padding-top: 10px
 
 	.footer-center
 		border-top: solid 1px $border-e5
