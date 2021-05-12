@@ -1,0 +1,46 @@
+.breadcrumb-wrapper
+	width: 100%
+	border-bottom: 1px solid #f5f5f5
+	background: $white
+	.breadcrumb
+		display: flex
+		align-items: center
+		background-color: transparent
+		flex-wrap: wrap
+		list-style: none
+		margin-bottom: 0
+		li
+			position: relative
+			display: flex
+			align-items: center
+			a
+				color: $gray-6
+				font-size: r(14px)
+				span
+					color: $gray-6
+					font-size: r(14px)
+				&.active,
+				&:hover
+					span
+						color: $black
+			&:first-child
+				padding-right: 9px
+				a
+					font-size: 0
+					&::before
+						content: '\e800'
+						font-family: Linearicons-Free
+						color: $gray-6
+						font-size: r(14px)
+						line-height: 20px
+			+ li
+				padding: 0 9px
+				&::before
+					position: absolute
+					top: 50%
+					left: 0
+					width: 1px
+					height: 15px
+					transform: translateY(-50%)
+					content: ''
+					background: $gray-6

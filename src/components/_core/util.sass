@@ -93,30 +93,36 @@
 			display: block
 
 .option
-	width: 46px
-	height: 38px
+	width: 50px
+	height: 26px
+	display: flex
+	align-items: center
+	justify-content: center
 	position: absolute
+	clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%)
 	&.black
-		right: 10px
-		top: 0
-		display: flex
-		align-items: center
-		justify-content: center
-		background: url(../img/icons/bg-black.png)
+		left: 11px
+		top: 11px
+		background-color: $brow-f20
+		.desc
+			color: $white
+
 	&.red
-		left: 10px
-		top: 0
-		display: flex
-		align-items: center
-		justify-content: center
-		background: url(../img/icons/bg-red.png)
-		background-size: 100% 100%
-		background-position: center
-	.inner
-		font-size: 12px
-		text-transform: uppercase
-		color: $white
-		font-weight: bold
+		right: 11px
+		top: 11px
+		background: $red
+		.desc
+			color: $white
+	&.yellow
+		left: 11px
+		top: 11px
+		background: $main
+		.desc
+			color: $brow-f20
+	.desc
+		font-size: r(14px)
+		font-weight: 400
+		text-align: center
 .cmsadminpanel
 	nav
 		.listmenu

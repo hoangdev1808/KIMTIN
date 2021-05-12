@@ -1,0 +1,63 @@
+.home-specail
+	.col-lg-3
+		position: relative
+		background: $white
+		transition: all .5s
+		border: thin solid $border-e5
+
+	.item-pro
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-direction: column
+		padding-bottom: 20px
+		.img
+			padding-top: 58px
+			padding-left: 20px
+			padding-right: 20px
+			width: 100%
+			margin-bottom: 43px
+			a
+				+img-scale(.75)
+		.caption
+			.title
+				margin-bottom: 12px
+				a
+					color: $black-3
+					font-size: r(14px)
+					font-weight: 400
+					line-height: 18px
+			.price-wrap
+				display: flex
+				align-items: center
+				justify-content: space-between
+				.price
+					color: $red
+					font-size: r(18px)
+					font-weight: 500
+				.oldprice
+					color: $gray-9
+					font-size: r(14px)
+					font-weight: 400
+					text-decoration: line-through
+		@media screen and ( max-width: 575.98px )
+			.img
+				margin-bottom: 15px
+			.caption
+				.price-wrap
+					flex-direction: column
+					align-items: flex-start
+	.button
+		width: 100%
+		margin-top: 30px
+	@media screen and ( min-width: 992px )
+		.col-lg-3
+			&:hover
+				box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1)
+				border: 1px solid $main
+				background: $white
+				.item-pro
+					.caption
+						.title
+							a
+								color: $red

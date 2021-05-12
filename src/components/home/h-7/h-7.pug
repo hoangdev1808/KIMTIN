@@ -1,0 +1,21 @@
+section.section.home-product 
+	.container 
+		.section-title Dụng cụ cầm tay
+		.wrapper-slide 
+			.swiper-container
+				.swiper-wrapper
+					-for(i=1; i<6; i++)
+						.swiper-slide
+							.swiper-inner
+								.img
+									a(href="")
+										img.lazyload(data-src="./img/home/product/pro-"+i+".png" alt="")
+								.caption 
+									.title 
+										a(href="") Máy Bào Soi CT11002 CROWN
+									.wraper-price.d-flex.aligin-center
+										span.price 550.000 đ
+										span.oldprice 650.000 đ
+								
+			.swiper-button-next
+			.swiper-button-prev

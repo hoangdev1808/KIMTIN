@@ -1,0 +1,27 @@
+section.section.home-specail 
+	.container 
+		.section-title Sản phẩm nổi bật
+		.row 
+			-for(i = 1; i < 9; i++)
+				.col-6.col-sm-6.col-md-4.col-lg-3
+					.item-pro
+						.img 
+							a(href="")
+								img.lazyload(data-src="./img/home/pro-"+i+".png", alt="")  
+						.caption 
+							.title
+								a(href="") Que hàn đắp độ cứng cao GH-600 5kg
+							.price-wrap 
+								span.price 4.500.000₫
+								sapn.oldprice 5.620.000₫
+						.option.yellow 
+							.desc Mới
+						.option.red 
+							.desc -15%
+						//- .option.black 
+						//- 	.desc -10%
+			.button.d-flex.justify-center
+				a.btn.btn-defaul(href="") 
+					span xem thêm 
+					em.lnr.lnr-plus-circle
+

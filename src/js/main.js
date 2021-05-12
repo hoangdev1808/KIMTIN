@@ -43,10 +43,10 @@ const initBanner = () => {
 		speed: 2500,
 		effect: "fade",
 		grabCursor: true,
-		// autoplay: {
-		// 	delay: 5000,
-		// 	disableOnInteraction: false,
-		// },
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
 		fadeEffect: {
 			crossFade: true,
 		},
@@ -55,6 +55,49 @@ const initBanner = () => {
 			clickable: true,
 			type: "bullets",
 		},
+	});
+	$(".wrapper-slide  .swiper-container").each(function (index, element) {
+		var $this = $(this);
+		$this.addClass("instance-" + index);
+		$this
+			.parent()
+			.find(".swiper-button-prev")
+			.addClass("swiper-button-prev-" + index);
+		$this
+			.parent()
+			.find(".swiper-button-next")
+			.addClass("swiper-button-next-" + index);
+
+		var swiper = new Swiper(".instance-" + index, {
+			speed: 750,
+			observer: true,
+			observeParents: true,
+			lazy: true,
+			breakpointsInverse: true,
+			loop: true,
+			navigation: {
+				nextEl: ".swiper-button-next-" + index,
+				prevEl: ".swiper-button-prev-" + index,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				768: {
+					spaceBetween: 13,
+					slidesPerView: 3,
+				},
+				1025: {
+					spaceBetween: 13,
+					slidesPerView: 4,
+				},
+				1200: {
+					spaceBetween: 13,
+					slidesPerView: 5,
+				},
+			},
+		});
 	});
 };
 // ===========================CHECK BANNER========================= //
@@ -145,15 +188,31 @@ function adjustProductAmount() {
 		$(".amount").trigger("change");
 	});
 }
+
+// ========================SCROLL HEADER ACTIVE ================================ //
+const headerScrollActive = () => {
+	let bannerHeight = $("#banner-home").outerHeight();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > bannerHeight) {
+			$("header").addClass("show__scroll");
+			$("header").slideDown();
+		} else if ($(this).scrollTop() > 0) {
+			$("header").slideUp();
+		} else {
+			$("header").removeClass("show__scroll");
+			$("header").slideDown();
+		}
+	});
+};
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
-	scrollTop();
+	// scrollTop();
 	mainMenu();
 	initBanner();
 	searchButton();
 	setBackgroundElement();
-	// checkLayoutBanner();
 	mappingInit();
+	headerScrollActive();
 	// For Page Product
-	adjustProductAmount;
+	adjustProductAmount();
 });

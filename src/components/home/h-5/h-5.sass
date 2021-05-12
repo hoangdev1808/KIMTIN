@@ -1,0 +1,92 @@
+.home-product
+	.wrapper-slide
+		position: relative
+		.swiper-inner
+			position: relative
+			transition: all .5s
+
+			.img
+				border: 1px solid $border-e5
+				background: #fefefe
+				padding: 20px
+				margin-bottom: 20px
+				transition: all .5s
+				a
+					+img-scale(235/235)
+			.caption
+				.title
+					padding-right: 39px
+					padding-bottom: 14px
+					a
+						color: $black-3
+						font-size: r(14px)
+				.wraper-price
+					padding: 0 10px
+					justify-content: space-between
+					.price
+						color: $red
+						font-weight: 500
+					.oldprice
+						color: $gray-9
+						font-size: r(12px)
+						text-decoration: line-through
+			@media screen and ( min-width: 992px )
+				&:hover
+					.img
+						border: 1px solid $main
+						box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1)
+					.caption
+						.title
+							a
+								color: $red
+			@media screen and ( max-width: 767.98px )
+				.img
+					margin-bottom: 10px
+				.caption
+					.title
+						padding-right: 15px
+						padding-bottom: 10px
+					.wraper-price
+						padding: 0
+						flex-direction: column
+						align-items: flex-start
+		.swiper-button-next,
+		.swiper-button-prev
+			width: 50px
+			height: 50px
+			border: 1px solid $border-dc
+			background: $white
+			top: 35%
+			transition: all .5s
+			&::before
+				color: $gray-9
+				font-family: Linearicons-Free
+				font-size: r(20px)
+				transition: all .5s
+
+			@media screen and ( min-width: 992px )
+				&:hover
+					border: 1px solid $tran
+					background: $brow-f20
+					&::before
+						color: $main
+		.swiper-button-next
+			right: -65px
+			&::before
+				content: '\e87a'
+		.swiper-button-prev
+			left: -65px
+			&::before
+				content: '\e879'
+		@media screen and ( max-width: 767.98px )
+			margin-bottom: 50px
+			.swiper-button-next,
+			.swiper-button-prev
+				width: 40px
+				height: 40px
+				top: auto
+				bottom: -60px
+			.swiper-button-next
+				right: 35%
+			.swiper-button-prev
+				left: 35%

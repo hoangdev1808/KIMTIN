@@ -1,0 +1,42 @@
+.home-methor
+	.item
+		position: relative
+		margin-bottom: 30px
+		width: 100%
+		height: 180px
+		display: flex
+		justify-content: space-between
+		flex-direction: column
+		.caption
+			padding-top: 27px
+			padding-left: 30px
+			.title
+				a
+					font-size: r(18px)
+					font-weight: 700
+					letter-spacing: -0.45px
+			.sub-title
+				margin-bottom: 21px
+				p
+					font-size: r(14px)
+					font-weight: 400
+		.img
+			position: absolute
+			bottom: 0
+			right: 0
+		@media screen and ( max-width: 767.98px )
+			.caption
+				padding-left: 15px
+				padding-right: 15px
+		&.gradient-red,
+		&.gradient-black
+			.caption
+				.title
+					a
+						color: $white
+				.sub-title
+					p
+						color: $white
+		&.gradient-black
+			.img
+				margin-right: 36px
