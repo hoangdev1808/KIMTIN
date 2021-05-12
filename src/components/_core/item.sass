@@ -2,6 +2,8 @@
 	color: $gray-9
 	font-size: r(14px)
 	font-weight: 400
+	@media screen and ( max-width: 1200px )
+		font-size: r(12px)
 .wrap-date-link
 	display: flex
 	align-items: center
@@ -12,17 +14,19 @@
 			font-size: r(14px)
 			font-weight: 400
 			transition: .3s all ease-in-out
+.title-post
+	color: $black-1
+	font-size: r(18px)
+	font-weight: 700
+	line-height: 1.56
+	transition: .3s all ease-in-out
+	@media screen and ( max-width: 1200px )
+		font-size: 1rem
 .box-post-item
 	margin-bottom: 40px
 	.img
 		a
 			+img-ratio(280/390)
-	.title-post
-		color: $black-1
-		font-size: r(18px)
-		font-weight: 700
-		line-height: 1.56
-		transition: .3s all ease-in-out
 	.wrap-content
 		position: relative
 		padding-bottom: 5px
@@ -52,6 +56,8 @@
 		font-size: r(16px)
 		font-weight: 400
 		+rgtext(3)
+		@media screen and ( max-width: 1200px )
+			font-size: r(14px)
 	.content
 		padding-top: 13px
 		margin-bottom: 20px

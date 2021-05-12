@@ -8,12 +8,18 @@
 		.box-img
 			flex: 0 0 50%
 			max-width: 50%
+			@media screen and ( max-width: 767.67px )
+				flex: 0 0 100%
+				max-width: 100%
 			.img
 				+img-ratio(430/615)
 				@media screen and ( max-width: 1280px )
-					+img-ratio(413/555)
+					padding-top: 80%
 				@media screen and ( max-width: 1023.67px )
-					+img-ratio(485/465)
+					padding-top: 100%
+				@media screen and ( max-width: 767.67px )
+					padding-top: 60%
+
 		.box-content
 			flex: 0 0 50%
 			max-width: 50%
@@ -23,11 +29,57 @@
 			justify-content: space-between
 			padding-bottom: 55px
 			padding-left: 44px
+			position: relative
+			@media screen and ( max-width: 1200px )
+				padding-bottom: 15px
+			@media screen and ( max-width: 767.67px )
+				flex: 0 0 100%
+				max-width: 100%
+				padding-left: 30px
+
+			&:hover
+				&::before
+					width: 100%
+					opacity: 1
+				.title
+					color: $main
+				.wrap-date-link
+					em
+						color: $main
+			&::before
+				content: ''
+				position: absolute
+				left: 50%
+				bottom: 0
+				width: 0%
+				height: 5px
+				background-color: $main
+				opacity: 0
+				transform: translateX(-50%)
+				transition: .3s all ease-in-out
 			.content
 				padding: 54px 69px 0px 0px
 				margin-bottom: 25px
+				@media screen and ( max-width: 1200px )
+					margin-bottom: 15px
+				@media screen and ( max-width: 1023.67px )
+					padding-top: 25px
+					padding-right: 30px
+				.desc
+					@media screen and ( max-width: 1200px )
+						+rgtext(8)
+					@media screen and ( max-width: 1023.67px )
+						+rgtext(7)
+					@media screen and ( max-width: 767.67px )
+						text-align: justify
 			.title
 				line-height: 1.15
 				margin-bottom: 10px
 				display: block
-
+				@media screen and ( max-width: 1023.67px )
+					font-size: r(20px)
+.wrap-post-list-km
+	@media screen and ( min-width: 1280px )
+		padding-bottom: 80px
+	.pagination
+		margin-top: -13px
