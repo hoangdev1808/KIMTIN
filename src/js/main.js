@@ -228,11 +228,17 @@ const accordianList = () => {
 	if ($(".side-navigation li").hasClass("active")) {
 		$(".side-navigation li.active").find(".nav-sub").slideDown(350);
 	}
-	$(".btn-dropdown").on("click", function () {
+	$(".filter-wrapper .title").on("click", function () {
 		$(this).toggleClass("active");
-		$(this).parent().next().slideToggle();
-		$(".btn-dropdown").not(this).parent().next().slideUp();
-		$(".btn-dropdown").not(this).removeClass("active");
+		$(this).next().slideToggle();
+		$(".filter-wrapper .title").not(this).next().slideUp();
+		$(".filter-wrapper .title").not(this).removeClass("active");
+	});
+	$(".side-navigation-wrapper .title").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).next().slideToggle();
+		$(".side-navigation-wrapper .title").not(this).next().slideUp();
+		$(".side-navigation-wrapper .title").not(this).removeClass("active");
 	});
 };
 /*==================== LOAD FUNCTION ====================*/
