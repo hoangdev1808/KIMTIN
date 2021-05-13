@@ -17,7 +17,6 @@ const scrollTop = () => {
 		});
 	});
 };
-
 /*==================== MAIN MENU MOBILE ====================*/
 const mainMenu = () => {
 	$(".btn-toggle").on("click", () => {
@@ -165,6 +164,30 @@ const mappingInit = () => {
 			$(this).toggleClass("active");
 		});
 };
+/*==================== Button Amount Product ====================*/
+function adjustProductAmount() {
+	$(".btn-dec").click(function (e) {
+		e.preventDefault();
+		let amountInput = $(this).next();
+		let amountVal = parseInt(amountInput.val());
+		if (amountVal <= 0) {
+			amountVal = 0;
+		} else {
+			amountVal--;
+		}
+		amountInput.val(amountVal);
+		$(".amount").trigger("change");
+	});
+
+	$(".btn-inc").click(function (e) {
+		e.preventDefault();
+		let amountInput = $(this).prev();
+		let amountVal = parseInt(amountInput.val());
+		amountVal++;
+		amountInput.val(amountVal);
+		$(".amount").trigger("change");
+	});
+}
 
 // ========================SCROLL HEADER ACTIVE ================================ //
 const headerScrollActive = () => {
@@ -222,4 +245,6 @@ $(document).ready(function () {
 	mappingInit();
 	headerScrollActive();
 	accordianList();
+	// For Page Product
+	adjustProductAmount();
 });
